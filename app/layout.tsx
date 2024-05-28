@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ReactQueryProvider from "../components/queryProvider";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import Head from "next/head";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +20,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <Head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/redux.png" sizes="any" />
+        <link rel="theme-color" content="fff" />
+      </Head>
+    
+        <ReactQueryProvider>
+          {children}
+          <ReactQueryDevtools />
+        </ReactQueryProvider>
+        </body>
     </html>
   );
 }

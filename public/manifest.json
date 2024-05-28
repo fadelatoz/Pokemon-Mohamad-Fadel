@@ -1,0 +1,23 @@
+{
+    "name": "Pokemon Serra",
+    "short_name": "Pokemon Serra",
+    "theme_color": "#2196f3",
+    "background_color": "#2196f3",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+      {
+        "src" : "/rocket-lunch.png",
+        "sizes" : "192x192",
+        "type" : "image/png"
+      },
+      {
+        "src" : "/rocket-lunch.png",
+        "sizes" : "96x96",
+        "type" : "image/png"
+      }
+    ],
+    "splash_pages": null
+  }
