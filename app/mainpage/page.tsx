@@ -52,6 +52,17 @@ export default function Home() {
   }, [inView, fetchNextPage, hasNextPage]);
 
 
+    useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registration successful with scope: ', registration.scope);
+        }).catch(error => {
+          console.log('Service Worker registration failed: ', error);
+        });
+    }
+  }, []);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-5 md:p-24">
       <Head>
