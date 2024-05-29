@@ -4,7 +4,7 @@ import Image from 'next/image'
 interface PokemonProps {
   name: string,
   image: string,
-  id? : number,
+  id? : number | any,
   innerRef?: (node?: Element | null | undefined) => void
 }
 
