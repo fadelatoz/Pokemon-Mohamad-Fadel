@@ -68,7 +68,7 @@ const DetailPokemon = () => {
             <span className="font-mono text-lg">Base Happines:  <span className="text-black font-bold">{detailPokemon?.arr?.base_happiness}</span> </span>
             <span className="font-mono text-lg">Capture Rate:  <span className="text-black font-bold">{detailPokemon?.arr?.capture_rate}</span> </span>
             <span className="font-mono text-lg">Egg Groups:  <span className="text-black font-bold">{detailPokemon?.arr?.egg_groups.map((v: any, k: string) => v.name.toString())}</span> </span>
-            <span className="font-mono text-lg">Evolves Species: <span className="text-black font-bold">{detailPokemon?.arr?.evolves_from_species.name}</span> </span>
+            <span className="font-mono text-lg">Evolves Species: <span className="text-black font-bold">{detailPokemon?.arr?.evolves_from_species?.name}</span> </span>
             <span className="font-mono text-lg">Gender Rate:  <span className="text-black font-bold">{detailPokemon?.arr?.gender_rate}</span> </span>
             <span className="font-mono text-lg">Is Baby:  <span className="text-black font-bold">{detailPokemon?.arr?.is_baby}</span> </span>
             <span className="font-mono text-lg">Is Legendary:  <span className="text-black font-bold">{detailPokemon?.arr?.is_legendary}</span> </span>

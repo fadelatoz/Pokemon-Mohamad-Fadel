@@ -4,6 +4,7 @@ import "./globals.css";
 import ReactQueryProvider from "../components/queryProvider";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import Head from "next/head";
+import { Providers } from "@components/provider";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,19 +20,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning>
       <body className={inter.className}>
-      <Head>
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/redux.png" sizes="any" />
-        <link rel="theme-color" content="fff" />
-      </Head>
-    
+        <Head>
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="icon" href="/redux.png" sizes="any" />
+          <link rel="theme-color" content="fff" />
+        </Head>
+
         <ReactQueryProvider>
-          {children}
+          <Providers>
+            {children}
+          </Providers>
           <ReactQueryDevtools />
         </ReactQueryProvider>
-        </body>
+      </body>
     </html>
   );
 }
